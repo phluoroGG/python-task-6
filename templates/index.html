@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+        background-image: url(static/background.png);
+        background-size: 100%;
+        background-color: #555;
+    }
+    div {
+        width: 50%;
+        margin: 0 auto;
+        background-color: #aaa;
+        padding: 10px;
+        border: 1px solid #333;
+        box-shadow: 8px 8px 5px #444;
+        background-image: linear-gradient(180deg, #fff, #ccc 40%, #aaa);
+    }
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        text-shadow: 2px 2px 4px #fff;
+    }
+    input, p {
+        font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+    <div>
+    <h1>Генератор японских кроссвордов</h1>
+    <form action=" {{ url_for('crossword') }} " method="post">
+        <p><input type="file" name="f" accept="image/*" required>
+        <p><input type="number" size="2" name="num" min="5" max="80" value="5">
+        Максимальное количество клеток в кроссворде(длина или ширина)</p>
+
+        <p><input type="checkbox" name="solve" id="solve" value="solved"> Решённый кроссворд</p>
+        <p><input type="submit" name="cmd" value="Сгенерировать"/></p>
+    </form>
+    </div>
+</body>
+</html>

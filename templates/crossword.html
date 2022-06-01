@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Страница с параметром</title>
+    <style>
+    body {
+        background-color: #666;
+    }
+    div {
+        background-color: #aaa;
+        padding: 10px;
+        background-image: linear-gradient(0deg, #fff, #aaa 40%, #666);
+    }
+    h1 {
+        font-size: 48px;
+
+    }
+    input, p, button {
+        font-size: 24px;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:visited {
+        color: black;
+    }
+    a:active {
+        color: black;
+    }
+  </style>
+</head>
+<body link="black" vlink="black" alink="black">
+    <div>
+    <a href="{{ url_for('index') }}"><h1>На главную</h1></a>
+    <form action=" {{ url_for('crossword') }} " method="post">
+        <p><input hidden name="lab" value="{{ label }}"></p>
+        <p><input type="submit" name="cmd" value="{{ label }}"/></p>
+    </form>
+    <p><a href="{{ image_path }}" download="">
+        <button>Скачать файл</button>
+    </a></p>
+    </div>
+    <img src="{{ image_path }}" width="100%"/>
+</body>
+</html>
